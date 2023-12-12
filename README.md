@@ -32,10 +32,10 @@
 
 ### Association
 
-- has_many: seller_items, foreign_key: true
-- has_many: buyer_items, foreign_key: true
-- has_one: profile, dependent: :destroy
-- has_one: credit_card, dependent: :destroy
+ - has_many: seller_items, foreign_key: true
+ - has_many: buyer_items, foreign_key: true
+ - has_one: profile, dependent: :destroy
+ - has_one: credit_card, dependent: :destroy
 
 
 ## credit_cards テーブル
@@ -60,24 +60,24 @@
 | brand              | integer    |                           |
 | item_condition     | integer    | null: false               |
 | postage_payer      | integer    | null: false               |
-| preparation_day    | integer    | null: false
-| postage_type       | integer    | null: false
-| category           | integer    | null: false
-| trading_status     | integer    | null: false
-| seller             | references | null: false
-| buyer              | references | null: false
+| preparation_day    | integer    | null: false               |
+| postage_type       | integer    | null: false               |
+| category           | integer    | null: false               |
+| trading_status     | integer    | null: false               |
+| seller             | references | null: false               |
+| buyer              | references | null: false               |
 
 ### Association
 
-- has_many :item_images, dependent: :destroy
-- belongs_to :category
-- belongs_to_active_hash :item_condition
-- belongs_to_active_hash :preparation_day
-- belongs_to_active_hash :postage_type
-- belongs_to_active_hash :postage_payer
-- belongs_to :brand
-- belongs_to :seller, class_name: "User"
-- belongs_to :buyer, class_name: "User"
+ - has_many :item_images, dependent: :destroy
+ - belongs_to :category
+ - belongs_to_active_hash :item_condition
+ - belongs_to_active_hash :preparation_day
+ - belongs_to_active_hash :postage_type
+ - belongs_to_active_hash :postage_payer
+ - belongs_to :brand
+ - belongs_to :seller, class_name: "User"
+ - belongs_to :buyer, class_name: "User"
 
 
 ## items_images テーブル
